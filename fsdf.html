@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спутниковая карта</title>
+    <style>
+        /* Устанавливаем высоту карты */
+        #map {
+            height: 100vh; /* Высота карты на всю высоту окна */
+            width: 100%; /* Ширина карты на всю ширину окна */
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script>
+        function initMap() {
+            // Создаем карту с заданными координатами и уровнем масштабирования
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 55.7558, lng: 37.6173}, // Координаты центра карты (Москва)
+                zoom: 10, // Уровень масштабирования
+                mapTypeId: 'satellite' // Спутниковый режим
+            });
+        }
+    </script>
+</head>
+<body onload="initMap()">
+    <div id="map"></div>
+</body>
+</html>
